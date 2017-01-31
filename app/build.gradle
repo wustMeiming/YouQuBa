@@ -25,5 +25,34 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+
+    // Butter Knife Field and method binding for Android views
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+    // jsoup HTML parser library @ http://jsoup.org/
+    compile 'org.jsoup:jsoup:1.10.2'
+
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    compile 'io.reactivex.rxjava2:rxjava:2.0.1'
+
+    //A type-safe HTTP client for Android and Java
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+
+    //An HTTP & HTTP/2 client for Android and Java applications
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+
+    //Glide is a fast and efficient open source media management
+    // and image loading framework for Android that wraps media decoding,
+    // memory and disk caching, and resource pooling into a simple and
+    // easy to use interface.
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    //EventBus is a publish/subscribe event bus optimized for Android
+    compile 'org.greenrobot:eventbus:3.0.0'
+
     testCompile 'junit:junit:4.12'
 }
