@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">有趣吧</string>
+
+    <string name="setting">设置</string>
+    <string name="about"  >关于</string>
+
+    <string name="picture">搞笑图片</string>
+    <string name="movie"  >搞笑视频</string>
+    <string name="cartoon">搞笑漫画</string>
+    <string name="article">搞笑网文</string>
+    <string name="news"   >搞笑新闻</string>
+
+    <string name="share">分享</string>
+
+    <string name="navigation_drawer_open" >open drawer</string>
+    <string name="navigation_drawer_close">close drawer</string>
 </resources>
