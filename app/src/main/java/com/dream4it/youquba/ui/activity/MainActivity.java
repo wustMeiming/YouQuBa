@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.dream4it.youquba.R;
 import com.dream4it.youquba.ui.fragment.BaseFragment;
+import com.dream4it.youquba.utils.ImageLoaderUtil;
 import com.dream4it.youquba.utils.ResUtil;
 
 import java.util.HashMap;
@@ -67,8 +68,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initNavigationView() {
-        //ImageView icon = (ImageView) mNavView.getHeaderView(0).findViewById(R.id.nav_head_icon);
-        //ImageLoader.loadCircle(mContext, R.drawable.icon, icon);
+        ImageView icon = (ImageView) mNavView.getHeaderView(0).findViewById(R.id.nav_head_icon);
+        ImageLoaderUtil.load(mContext, R.mipmap.logo, icon);
         TextView name = (TextView) mNavView.getHeaderView(0).findViewById(R.id.nav_head_name);
         name.setText(R.string.app_name);
         mNavView.setCheckedItem(R.id.nav_picture);//设置默认选中
