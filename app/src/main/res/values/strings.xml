@@ -14,4 +14,6 @@
 
     <string name="navigation_drawer_open" >open drawer</string>
     <string name="navigation_drawer_close">close drawer</string>
+
+    <string name="info">关于我</string>
 </resources>
