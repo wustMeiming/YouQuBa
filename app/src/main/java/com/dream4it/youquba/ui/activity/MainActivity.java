@@ -131,8 +131,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private void openSetting() {
-        //Intent intent = new Intent(mContext, SetActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(mContext, SettingActivity.class);
+        startActivity(intent);
     }
 
     private void openAbout(){
