@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="picture">
+        <item>爆笑图片</item>
+        <item>邪恶内涵图</item>
+        <item>搞笑图片动态</item>
+        <item>恶搞图片</item>
+        <item>世界之最</item>
+        <item>养眼图片</item>
+        <item>搞笑美女</item>
+        <item>穿帮镜头</item>
+    </string-array>
+</resources>

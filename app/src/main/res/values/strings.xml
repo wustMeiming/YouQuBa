@@ -16,4 +16,6 @@
     <string name="navigation_drawer_close">close drawer</string>
 
     <string name="info">关于我</string>
+
+    <string name="net_connect_error">网络连接异常！</string>
 </resources>

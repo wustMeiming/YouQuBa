@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.dream4it.youquba.R;
 import com.dream4it.youquba.ui.fragment.BaseFragment;
+import com.dream4it.youquba.ui.fragment.TypeFragment;
 import com.dream4it.youquba.utils.ImageLoaderUtil;
 import com.dream4it.youquba.utils.ResUtil;
 
@@ -48,7 +49,7 @@ public class MainActivity extends BaseActivity {
         initDrawer();
         initNavigationView();
 
-        //doReplace(ResUtil.resToStr(mContext, R.string.gank));
+        doReplace(ResUtil.resToStr(mContext, R.string.picture));
     }
 
     @Override
@@ -109,7 +110,7 @@ public class MainActivity extends BaseActivity {
 
     private void doReplace(String type) {
         if (!type.equals(mCurrentType)) {
-            //replaceFragment(TypeFragment.newInstance(type), type, mCurrentType);
+            replaceFragment(TypeFragment.newInstance(type), type, mCurrentType);
             mCurrentType = type;
         }
     }
