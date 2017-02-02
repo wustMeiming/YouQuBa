@@ -18,4 +18,6 @@
     <string name="info">关于我</string>
 
     <string name="net_connect_error">网络连接异常！</string>
+
+    <string name="load_loading_tip">努力加载中</string>
 </resources>
