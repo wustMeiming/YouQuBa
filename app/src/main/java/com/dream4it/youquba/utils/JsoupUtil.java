@@ -20,6 +20,9 @@ public class JsoupUtil {
     public static List<PictureItemData> parsePictures(String response) {
         Document document = Jsoup.parse(response);
         Elements elements = document.select("body > div.adtop > div.indexbox > div.box-l > div.box-l-m > ul > li");
+        if (elements.size() == 0){
+            elements = document.select("body > div.indexbox > div.box-l > div.box-l-m > ul > li");
+        }
         List<PictureItemData> list = new ArrayList<>();
         PictureItemData data;
         for (Element element : elements) {
