@@ -1,6 +1,7 @@
 package com.dream4it.youquba.ui.fragment;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -8,6 +9,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import com.dream4it.youquba.R;
 import com.dream4it.youquba.data.PictureItemData;
 import com.dream4it.youquba.presenter.PictureItemPresenter;
+import com.dream4it.youquba.service.DataService;
 import com.dream4it.youquba.ui.adapter.OnItemClickListeners;
 import com.dream4it.youquba.ui.adapter.OnLoadMoreListener;
 import com.dream4it.youquba.ui.adapter.PictureItemAdapter;
@@ -15,6 +17,8 @@ import com.dream4it.youquba.ui.adapter.ViewHolder;
 import com.dream4it.youquba.ui.view.PictureItemView;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +29,7 @@ import butterknife.BindView;
  * Created by meiming on 17-2-1.
  */
 
-public class PictureFragment extends BaseMvpFragment<PictureItemView, PictureItemPresenter> implements PictureItemView, SwipeRefreshLayout.OnRefreshListener {
+public class PictureItemFragment extends BaseMvpFragment<PictureItemView, PictureItemPresenter> implements PictureItemView, SwipeRefreshLayout.OnRefreshListener {
     private int PAGE_COUNT = 1;
     private String mSubtype;
     private int mTempPageCount = 2;
@@ -59,7 +63,7 @@ public class PictureFragment extends BaseMvpFragment<PictureItemView, PictureIte
 
     @Override
     protected int initLayoutId() {
-        return R.layout.fragment_type_layout;
+        return R.layout.fragment_type_item_layout;
     }
 
     @Override
@@ -116,11 +120,42 @@ public class PictureFragment extends BaseMvpFragment<PictureItemView, PictureIte
 
     @Override
     public void onSuccess(List<PictureItemData> data) {
-        //DataService.startService(mActivity, data, mSubtype);
+        DataService.startService(mActivity, data, mSubtype);
     }
 
     @Override
     public void onError() {
+        if (isLoadMore) {
+            mPictureItemAdapter.setLoadFailedView(R.layout.load_failed_layout);
+        } else {
+            mSwipeRefreshLayout.setRefreshing(false);
+        }
+    }
 
+    public static PictureItemFragment newInstance(String subtype) {
+        PictureItemFragment fragment = new PictureItemFragment();
+        Bundle arguments = new Bundle();
+        arguments.putString(SUB_TYPE, subtype);
+        fragment.setArguments(arguments);
+        return fragment;
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void dataEvent(List<PictureItemData> data) {
+        if (!data.get(0).getSubtype().equals(mSubtype)) {
+            return;
+        }
+
+        if (isLoadMore) {
+            if (data.size() == 0) {
+                mPictureItemAdapter.setLoadEndView(R.layout.load_end_layout);
+            } else {
+                mTempPageCount++;
+                mPictureItemAdapter.setLoadMoreData(data);
+            }
+        } else {
+            mPictureItemAdapter.setNewData(data);
+            mSwipeRefreshLayout.setRefreshing(false);
+        }
     }
 }

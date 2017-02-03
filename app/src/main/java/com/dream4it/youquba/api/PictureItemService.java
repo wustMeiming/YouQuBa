@@ -1,10 +1,10 @@
-package com.dream4it.youquba.service;
+package com.dream4it.youquba.api;
 
 import com.dream4it.youquba.api.ApiUrl;
 
 
 import retrofit2.http.GET;
-import retrofit2.http.Query;
+import retrofit2.http.Path;
 import rx.Observable;
 
 /**
@@ -13,6 +13,7 @@ import rx.Observable;
 
 public interface PictureItemService {
     String BASE_URL = ApiUrl.URL_GET_PICTURE;
-    @GET("")
-    Observable<String> getPictureItemData(@Query("cid") String cid, @Query("page") int page);
+
+    @GET("{suburl}_{page}.html")
+    Observable<String> getPictureItemData(@Path("suburl") String suburl, @Path("page") int page);
 }

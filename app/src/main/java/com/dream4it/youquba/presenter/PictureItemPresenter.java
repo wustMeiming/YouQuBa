@@ -1,5 +1,7 @@
 package com.dream4it.youquba.presenter;
 
+import android.util.Log;
+
 import com.dream4it.youquba.model.IPictureItemModel;
 import com.dream4it.youquba.model.impl.PictureItemModelImpl;
 import com.dream4it.youquba.rx.RxManager;
@@ -18,8 +20,8 @@ public class PictureItemPresenter extends BasePresenter<PictureItemView> {
         mModel = new PictureItemModelImpl();
     }
 
-    public void getPictureItemData(String cid, int page){
-        mSubscription = RxManager.getInstance().doSubscribe(mModel.getPictureItemData(cid, page), new RxSubscriber<String>(false) {
+    public void getPictureItemData(String suburl, int page){
+        mSubscription = RxManager.getInstance().doSubscribe(mModel.getPictureItemData(suburl, page), new RxSubscriber<String>(false) {
             @Override
             protected void _onNext(String s) {
                 mView.onSuccess(JsoupUtil.parsePictures(s));
@@ -27,7 +29,7 @@ public class PictureItemPresenter extends BasePresenter<PictureItemView> {
 
             @Override
             protected void _onError() {
-
+                Log.e("PictureItemPresenter", "on error");
             }
         });
     }

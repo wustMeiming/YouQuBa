@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.CallAdapter;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
@@ -68,9 +69,9 @@ public class NetManager {
         builder.readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
 
         //配置log打印拦截器
-        /*HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        builder.addInterceptor(loggingInterceptor);*/
+        builder.addInterceptor(loggingInterceptor);
         return builder.build();
     }
 }

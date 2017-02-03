@@ -7,5 +7,5 @@ import rx.Observable;
  */
 
 public interface IPictureItemModel {
-    Observable<String> getPictureItemData(String cid, int page);
+    Observable<String> getPictureItemData(String suburl, int page);
 }

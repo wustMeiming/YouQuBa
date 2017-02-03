@@ -44,6 +44,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        System.out.println("main activity:init view");
         initStatusBar();
 
         initDrawer();

@@ -23,6 +23,7 @@ public class JsoupUtil {
         PictureItemData data;
         for (Element element : elements) {
             data = new PictureItemData();
+            data.setSubtype("baoxiao");
             data.setId(element.select("a").attr("href").substring(element.attr("href").lastIndexOf("/") + 1));
             data.setTitle(element.select("p > a").attr("title"));
             data.setImage(element.select("a > img").attr("src"));

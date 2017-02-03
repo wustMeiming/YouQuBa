@@ -20,4 +20,6 @@
     <string name="net_connect_error">网络连接异常！</string>
 
     <string name="load_loading_tip">努力加载中</string>
+    <string name="load_end_tip">--end--</string>
+    <string name="load_failed_tip">加载失败，再试试！</string>
 </resources>

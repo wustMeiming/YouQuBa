@@ -11,6 +11,7 @@ import com.dream4it.youquba.presenter.BasePresenter;
 
 public abstract class BaseMvpFragment<V, P extends BasePresenter<V>> extends BaseFragment {
     protected static final String SUB_TYPE = "subtype";
+    protected static final String SUB_TITLE = "subtitle";
 
     protected P mPresenter;
 

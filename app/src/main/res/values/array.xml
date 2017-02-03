@@ -10,4 +10,14 @@
         <item>搞笑美女</item>
         <item>穿帮镜头</item>
     </string-array>
+    <string-array name="picture_suburl">
+        <item>tupian/baoxiao/list_23</item>
+        <item>neihantu/list_3</item>
+        <item>GIF/list_26</item>
+        <item>tupian/egao/list_43</item>
+        <item>shijiezhizui/list_44</item>
+        <item>yangyanmeinv/list_48</item>
+        <item>gaoxiaomeinv/list_42</item>
+        <item>chuanbang/</item>
+    </string-array>
 </resources>

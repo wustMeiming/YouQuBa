@@ -6,5 +6,5 @@ package com.dream4it.youquba.api;
 
 public class ApiUrl {
     // 获取搞笑图片的ＵＲＬ
-    public static final String URL_GET_PICTURE = "http://www.youqu.net/tupian/";
+    public static final String URL_GET_PICTURE = "http://www.youqu.net/";
 }

@@ -75,8 +75,9 @@ public class TypeFragment extends BaseFragment{
 
         if (ResUtil.resToStr(mActivity, R.string.picture).equals(mType)) {
             mTitles = ResUtil.stringArrayToList(mActivity, R.array.picture);
-            for (String title : mTitles) {
-                //mFragments.add(PictureItemFragment.newInstance(title));
+            List<String> subtypes = ResUtil.stringArrayToList(mActivity, R.array.picture_suburl);
+            for (String subtype : subtypes) {
+                mFragments.add(PictureItemFragment.newInstance(subtype));
             }
         } else if (ResUtil.resToStr(mActivity, R.string.movie).equals(mType)) {
             /*mTitles = ResUtil.stringArrayToList(mActivity, R.array.movie);

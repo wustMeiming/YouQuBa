@@ -2,7 +2,7 @@ package com.dream4it.youquba.model.impl;
 
 import com.dream4it.youquba.model.IPictureItemModel;
 import com.dream4it.youquba.net.NetManager;
-import com.dream4it.youquba.service.PictureItemService;
+import com.dream4it.youquba.api.PictureItemService;
 
 import rx.Observable;
 
@@ -13,8 +13,8 @@ import rx.Observable;
 public class PictureItemModelImpl implements IPictureItemModel {
 
     @Override
-    public Observable<String> getPictureItemData(String cid, int page) {
+    public Observable<String> getPictureItemData(String suburl, int page) {
         PictureItemService service = NetManager.getInstance().createScalars(PictureItemService.class);
-        return service.getPictureItemData(cid, page);
+        return service.getPictureItemData(suburl, page);
     }
 }
