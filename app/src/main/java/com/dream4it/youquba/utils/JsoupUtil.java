@@ -34,6 +34,7 @@ public class JsoupUtil {
             if (data.getImage().startsWith("/")){
                 data.setImage(ApiUrl.URL_YQB_HOST + data.getImage());
             }
+            data.setUrl(ApiUrl.URL_YQB_HOST + element.select("a").attr("href"));
             list.add(data);
         }
 

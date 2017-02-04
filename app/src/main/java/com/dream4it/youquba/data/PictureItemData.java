@@ -11,6 +11,7 @@ public class PictureItemData implements Parcelable{
     private String id;
     private String title;
     private String image;
+    private String url;
     private String subtype;
 
     public String getSubtype() {
@@ -45,6 +46,14 @@ public class PictureItemData implements Parcelable{
         this.image = image;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -55,6 +64,7 @@ public class PictureItemData implements Parcelable{
         dest.writeString(this.id);
         dest.writeString(this.title);
         dest.writeString(this.image);
+        dest.writeString(this.url);
         dest.writeString(this.subtype);
     }
 
@@ -64,6 +74,7 @@ public class PictureItemData implements Parcelable{
         this.id = in.readString();
         this.title = in.readString();
         this.image = in.readString();
+        this.url = in.readString();
         this.subtype = in.readString();
     }
 

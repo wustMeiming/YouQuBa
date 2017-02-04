@@ -10,6 +10,7 @@ import com.dream4it.youquba.R;
 import com.dream4it.youquba.data.PictureItemData;
 import com.dream4it.youquba.presenter.PictureItemPresenter;
 import com.dream4it.youquba.service.DataService;
+import com.dream4it.youquba.ui.activity.PictureDetailActivity;
 import com.dream4it.youquba.ui.adapter.OnItemClickListeners;
 import com.dream4it.youquba.ui.adapter.OnLoadMoreListener;
 import com.dream4it.youquba.ui.adapter.PictureItemAdapter;
@@ -85,9 +86,9 @@ public class PictureItemFragment extends BaseMvpFragment<PictureItemView, Pictur
         mPictureItemAdapter.setOnItemClickListener(new OnItemClickListeners<PictureItemData>() {
             @Override
             public void onItemClick(ViewHolder viewHolder, PictureItemData PictureItemData, int position) {
-                /*Intent intent = new Intent(mActivity, PictureDetailActivity.class);
+                Intent intent = new Intent(mActivity, PictureDetailActivity.class);
                 intent.putExtra("picture_item_data", PictureItemData);
-                startActivity(intent);*/
+                startActivity(intent);
             }
         });
 
